@@ -1,8 +1,8 @@
-import server from "server";
+import server from "./server";
 import request from "supertest";
 
 describe("server", () => {
-  it("[GET] / for the server", () => {
+  it("[GET] / for the successful server response", () => {
     return (
       request(server)
         .get("/")
@@ -13,7 +13,7 @@ describe("server", () => {
         })
     );
   });
-  it("* test for forbidden routes", () => {
+  it("* test for forbidden routes responses", () => {
     return (
       request(server)
         .get("*")
